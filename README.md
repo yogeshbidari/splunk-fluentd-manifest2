@@ -1,0 +1,1 @@
+# splunk-fluentd-manifest2
