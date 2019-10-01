@@ -42,7 +42,7 @@ data:
       @label @SPLUNK
       tag tail.containers.*
       path /var/log/containers/*.log
-      exclude_path ["/var/log/containers/event-exporter**.gz", "/var/log/containers/kube-dns**.log","/var/log/containers/fluentd-gcp**.log"] #files need to be excluded inside /var/log/containers
+      exclude_path ["/var/log/containers/event-exporter**.log", "/var/log/containers/kube-dns**.log","/var/log/containers/fluentd-gcp**.log"] #files need to be excluded inside /var/log/containers
       pos_file /var/log/splunk-fluentd-containers.log.pos
       path_key source
       read_from_head true
@@ -62,6 +62,7 @@ data:
       @label @SPLUNK
       tag tail.file.*
       path /var/log/datasiv/*.log #Getting apllication logs from /var/log/datasiv directory
+      exclude_path ["/var/log/datasiv/flexi2.log", "/var/log/datasiv/flexi1.log"] #files need to be excluded inside /var/log/datasiv
       pos_file /var/log/splunk-files.log.pos
       path_key source
       read_from_head true
